@@ -79,13 +79,62 @@ public static void main(String[] args) {
 
 ## Informations Générales
 ***
-Mise en place d'une Gateway qui s'appuit sur la solution Spring Cloud Gateway
+Exemple simple d'injection de dépendances 
+
+```
+/*
+ * L'annotation @Component permet de declarer un Bean 
+ * Le fait de déclarer cette classe comme Bean a pour role de la charger au boot
+ * L'un des constructeurs de la classe seras automatiquement appellé au boot
+ */
+@Component("A")
+public class A {
+
+    /*Variables*/
+    String display;
+
+    /*
+     * Il existent deux modes d'injection de dépendence :
+     * Choix 1: Commenter le constructeur public A(B b), laissé autowired sur la variable 
+     * Choix 2: Commenter @Autowiredle, Commenter le constructeur public A()
+     */
+    @Autowired
+    private B b;
+    
+    /*
+     *Constructeur 
+     */
+    public A(){
+        this.display = "Classe A";
+    }
+
+    /*
+     *Constructeur 
+     */
+    public A(B b){
+        this.b = b;
+    }
+
+    /*
+     * Si la méthode est annoté avec un Bean 
+     * Elle seras initilisé au boot
+     */
+    @Bean
+    public void init(){
+        display = "classe Init";
+    }
+
+
+}
+```
+
 ## Technologies
 ***
 Technologies utilisées:
 * Java 17 
 * Maven 3.6
 * Spring-boot: 3.2
+
 ## Instalation
 ***
 Lancement de l'application Spring-boot<br>
