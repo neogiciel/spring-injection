@@ -88,20 +88,6 @@ Technologies utilisées:
 * Spring-boot: 3.2
 ## Instalation
 ***
-Configuration de la route
-```
- @Bean
-    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
-
-        logger.info("[Service GW Springboot] SpringCloudConfig : gatewayRoutes");
-
-        return builder.routes()
-                .route(r -> r.path("/security")
-                        .uri("http://dev2.neogiciel.com"))
-
-                .build();
-    }
-```
 Lancement de l'application Spring-boot<br>
 ```
 $ mvn  clean
@@ -111,8 +97,8 @@ Le service est accessible sur http://localhost:8088/test
 
 ## FAQs
 ***
-**Présentation de la Spring Cloud Gateway**
-* https://spring.io/projects/spring-cloud-gateway
+**Aucune**
+
 
 
 
