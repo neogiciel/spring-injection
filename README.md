@@ -1,5 +1,17 @@
-## <h1>Simple Exemple d'injection de dépendances</h1>
+## <h1>Simple Spring-boot d'injection de dépendances</h1>
 ***
+*Tout d'abord :*
+Lors de la séparation d'un code en plusieurs classes, nous avons une dépendance directe d'une classe a une autre. Nous séparons le code général en une classe A et une classe B. La classe A doit utiliser une méthode de la classe B.
+
+Cela se fait donc dans le code de A comme suit :
+```
+public class A {
+   public static void main(String[] args) 
+      B b = new B();
+      b.someMethod();
+   }
+}
+```
 
 
 ## Informations Générales
